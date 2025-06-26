@@ -3,6 +3,7 @@
 In this repo we are going to review javascript basics for week2.
 
 We'll cover:
+
     - Basic JS datatypes
     - Console log
     - Running JS from an index.html page (script tag)
@@ -10,9 +11,11 @@ We'll cover:
     - Bonus: Week 3 content (loops, arrays, functions, objects)
 
 ## Basic Datatypes
+
 Lots more info on [Javascript.info](https://javascript.info).
 You can use `typeof` to ask a value or variable what kind of datatype it is
 typeof(10) returns the string 'number'; typeof('blaine') returns 'string'
+
     - Numbers
         - Integers (like 20)
         - Floats (like 2.2222)
