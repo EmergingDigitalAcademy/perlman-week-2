@@ -64,17 +64,35 @@ for (const currentNumber of puzzleNumbers) {
 }
 console.log(`Found ${perfectSquares.length} numbers!`, perfectSquares);
 
-// Find any numbers that are powers of 2
-console.log(`Looking for powers of 2`);
-const powersOf2 = [];
-for (const currentNumber of puzzleNumbers) {
-    // 2^3 is 8. How do we go from 8 to 3?
-    if (Number.isInteger(Math.log2(currentNumber))) {
-        console.log(`   --> Found one! ${currentNumber}; 2**${Math.log2(currentNumber)}`);
-        powersOf2.push(currentNumber);
+/**
+ * Finds numbers that are powers of 2 in the given array.
+ * 
+ * @param {number[]} numbersToSearch - An array of numbers to search through.
+ * @returns {number[]} An array of numbers that are powers of 2.
+ */
+function findPowersOf2(numbersToSearch) {
+    // Find any numbers that are powers of 2
+    console.log(`Looking for powers of 2`);
+    const powersOf2 = [];
+    for (const currentNumber of numbersToSearch) {
+        // 2, 4, 8, 16, ... are powers of 2. 
+        // For example, 8 is 2 to the third power (2^3)
+        // If we have `8`, how do we get `3`? Log2! Log2(8)=>3
+        if (Number.isInteger(Math.log2(currentNumber))) {
+            // console.log(`   --> Found one! ${currentNumber}; 2**${Math.log2(currentNumber)}`);
+            powersOf2.push(currentNumber);
+        }
     }
+    // console.log(`Found ${powersOf2.length} numbers!`, powersOf2);
+    return powersOf2;
 }
-console.log(`Found ${powersOf2.length} numbers!`, powersOf2);
+console.log(findPowersOf2(puzzleNumbers));
+console.log(findPowersOf2([2, 1024, 65656]));
+const result5 = findPowersOf2([1, 2**32, 2**11, 100]);
+console.log(`Result5: `, result5);
+
+
+
 
 // Find numbers of repeating digits
 console.log(`Looking for repeat digits`);
